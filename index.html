@@ -1,45 +1,59 @@
-<!-- Seção Login + Cadastro + Imagens -->
-<section class="login-cadastro-secao">
-  <div class="conteudo-login-cadastro">
-    
-    <!-- Lado Esquerdo -->
-    <div class="lado-esquerdo">
-      <div class="titulo-bloco">
-        <h2>Desenvolvimento de<br><span>sistemas</span></h2>
-        <img src="imagem5.png" alt="Desenvolvimento de sistemas" class="img-banner">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desenvolvimento de Sistemas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section class="login-cadastro-secao">
+
+    <div class="conteudo-login-cadastro">
+
+      <!-- LADO ESQUERDO -->
+      <div class="lado-esquerdo">
+        <div class="titulo-bloco">
+          <h1>Desenvolvimento de<br><span>sistemas</span></h1>
+          <img src="imagem5.png" alt="Desenvolvimento de sistemas" class="img-banner">
+        </div>
+
+        <div class="redes-sociais">
+          <p>Siga-nos no</p>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+        </div>
       </div>
 
-      <p class="redes-sociais">
-        Siga-nos no 
-        <a href="#">Facebook</a> 
-        <a href="#">Instagram</a>
-      </p>
+      <!-- LADO DIREITO -->
+      <div class="lado-direito">
+
+        <!-- CADASTRO DE EMAIL -->
+        <div class="box-form">
+          <h3>Cadastre seu endereço de e-mail para receber novidades e atualizações</h3>
+          <form id="form-email">
+            <input type="email" id="email" placeholder="Endereço de e-mail" required />
+            <button type="submit">Cadastre-se</button>
+            <p id="mensagem-email" class="mensagem"></p>
+          </form>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="box-form">
+          <h3>Área do Usuário</h3>
+          <form id="form-login">
+            <input type="text" id="usuario" placeholder="Usuário" required />
+            <input type="password" id="senha" placeholder="Senha" required />
+            <button type="submit">Entrar</button>
+            <p id="mensagem-login" class="mensagem"></p>
+          </form>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- Lado Direito -->
-    <div class="lado-direito">
-      
-      <!-- Login -->
-      <div class="box-form login">
-        <h3>Área do Usuário</h3>
-        <form id="form-login">
-          <input type="text" id="usuario" placeholder="Usuário" required />
-          <input type="password" id="senha" placeholder="Senha" required />
-          <button type="submit">Entrar</button>
-          <p id="mensagem-login" class="mensagem"></p>
-        </form>
-      </div>
-
-      <!-- Cadastro -->
-      <div class="box-form cadastro-email">
-        <h3>Cadastre seu endereço de e-mail para receber novidades e atualizações.</h3>
-        <form id="form-email">
-          <input type="email" id="email" placeholder="Endereço de e-mail" required />
-          <button type="submit">Cadastre-se</button>
-        </form>
-        <p id="mensagem-sucesso" class="mensagem"></p>
-      </div>
-
-    </div>
-  </div>
-</section>
+  <script src="script.js"></script>
+</body>
+</html>
