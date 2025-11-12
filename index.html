@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desenvolvimento de Sistemas</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem sou eu?</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section class="login-cadastro-secao">
-
-    <div class="conteudo-login-cadastro">
-
-      <!-- LADO ESQUERDO -->
-      <div class="lado-esquerdo">
-        <div class="titulo-bloco">
-          <h1>Desenvolvimento de<br><span>sistemas</span></h1>
-          <img src="imagem5.png" alt="Desenvolvimento de sistemas" class="img-banner">
-        </div>
-
-        <div class="redes-sociais">
-          <p>Siga-nos no</p>
-          <a href="#">Facebook</a>
-          <a href="#">Instagram</a>
-        </div>
-      </div>
-
-      <!-- LADO DIREITO -->
-      <div class="lado-direito">
-
-        <!-- CADASTRO DE EMAIL -->
-        <div class="box-form">
-          <h3>Cadastre seu endereço de e-mail para receber novidades e atualizações</h3>
-          <form id="form-email">
-            <input type="email" id="email" placeholder="Endereço de e-mail" required />
-            <button type="submit">Cadastre-se</button>
-            <p id="mensagem-email" class="mensagem"></p>
-          </form>
-        </div>
-
-        <!-- LOGIN -->
-        <div class="box-form">
-          <h3>Área do Usuário</h3>
-          <form id="form-login">
-            <input type="text" id="usuario" placeholder="Usuário" required />
-            <input type="password" id="senha" placeholder="Senha" required />
-            <button type="submit">Entrar</button>
-            <p id="mensagem-login" class="mensagem"></p>
-          </form>
-        </div>
-
-      </div>
+  <header>
+    <div class="topo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="icone">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icone">
     </div>
-  </section>
+
+    <div class="foto-perfil">
+      <img src="perfil.jpg" alt="Foto de perfil">
+      <h1>Quem sou eu ?</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="sobre">
+      <div class="atividade">
+        <img src="celula.jpg" alt="Célula / Igreja">
+        <p>-célula<br>-igreja-</p>
+      </div>
+
+      <div class="atividade">
+        <img src="jp.jpg" alt="Estudo de japonês">
+        <p>estudo de japonês</p>
+      </div>
+
+      <div class="atividade">
+        <img src="trabalho.jpg" alt="Meu trabalho">
+        <p>meu trabalho</p>
+      </div>
+
+      <div class="atividade">
+        <img src="curso.jpg" alt="Curso de sistemas">
+        <p>curso de<br>desenvolvimento de sistemas<br>-ensino médio-</p>
+      </div>
+
+      <div class="atividade">
+        <img src="amigos.jpg" alt="Meus amigos">
+        <p>meus amigos</p>
+      </div>
+
+      <div class="atividade">
+        <img src="volei.jpg" alt="Time de vôlei">
+        <p>time de vôlei<br>-colegial-</p>
+      </div>
+    </section>
+
+    <div class="kanji">
+      <img src="kanji.png" alt="Kanji">
+    </div>
+  </main>
+
+  <footer>
+    <p>Mais informações entre em contato</p>
+    <p>+55 41 9.9999-9999</p>
+    <small>© 2021 - 2025 | Curso de ADS | Todos os Direitos Reservados</small>
+  </footer>
 
   <script src="script.js"></script>
 </body>

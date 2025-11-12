@@ -1,57 +1,86 @@
-document.addEventListener("DOMContentLoaded", () => {
+// ===== 1. Efeito de zoom nos ícones do topo =====
+document.querySelectorAll('.icone').forEach(icon => {
+  icon.addEventListener('mouseenter', () => {
+    icon.style.transform = 'rotate(10deg) scale(1.3)';
+  });
+  icon.addEventListener('mouseleave', () => {
+    icon.style.transform = 'rotate(0deg) scale(1)';
+  });
+});
 
-  // ===========================
-  // FUNÇÃO GENÉRICA DE MENSAGENS
-  // ===========================
-  function mostrarMensagem(elemento, texto, cor) {
-    elemento.textContent = texto;
-    elemento.style.color = cor;
-    elemento.classList.add("visivel");
+// ===== 2. Saudação dinâmica =====
+window.addEventListener('load', () => {
+  const hora = new Date().getHours();
+  let saudacao = '';
 
-    clearTimeout(elemento.timeout);
-    elemento.timeout = setTimeout(() => {
-      elemento.classList.remove("visivel");
-      elemento.timeout = null;
-    }, 4000);
+  if (hora < 12) saudacao = 'Bom dia!';
+  else if (hora < 18) saudacao = 'Boa tarde!';
+  else saudacao = 'Boa noite!';
+
+  alert(`${saudacao} Seja bem-vindo(a) à minha página!`);
+});
+
+// ===== 3. Clique nas imagens com efeito =====
+const atividades = document.querySelectorAll('.atividade');
+atividades.forEach(a => {
+  a.addEventListener('click', () => {
+    a.classList.toggle('ativo');
+    if (a.classList.contains('ativo')) {
+      a.style.filter = 'brightness(1.4)';
+    } else {
+      a.style.filter = 'brightness(1)';
+    }
+  });
+});
+
+// ===== 4. Botão de rolar ao topo =====
+const botaoTopo = document.createElement('button');
+botaoTopo.textContent = "⬆️ Topo";
+botaoTopo.classList.add('btn-topo');
+document.body.appendChild(botaoTopo);
+
+botaoTopo.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Estilo do botão
+const estilo = document.createElement('style');
+estilo.textContent = `
+  .btn-topo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #c44a2d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: none;
   }
+`;
+document.head.appendChild(estilo);
 
-  // ===========================
-  // CADASTRO DE E-MAIL
-  // ===========================
-  const formEmail = document.getElementById("form-email");
-  const msgEmail = document.getElementById("mensagem-email");
+// Mostrar botão quando rolar
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) botaoTopo.style.display = 'block';
+  else botaoTopo.style.display = 'none';
+});
 
-  formEmail.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("email").value.trim();
-
-    if (!email.includes("@")) {
-      mostrarMensagem(msgEmail, "Por favor, insira um e-mail válido.", "#c62828");
-      return;
+// ===== 5. Efeito de fade-in quando aparece na tela =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
     }
-
-    mostrarMensagem(msgEmail, "Conta criada com sucesso! 🎉", "#2e7d32");
-    formEmail.reset();
   });
+}, { threshold: 0.3 });
 
-  // ===========================
-  // LOGIN DE USUÁRIO
-  // ===========================
-  const formLogin = document.getElementById("form-login");
-  const msgLogin = document.getElementById("mensagem-login");
-
-  formLogin.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const usuario = document.getElementById("usuario").value.trim();
-    const senha = document.getElementById("senha").value.trim();
-
-    if (usuario === "" || senha === "") {
-      mostrarMensagem(msgLogin, "Preencha todos os campos!", "#c62828");
-      return;
-    }
-
-    mostrarMensagem(msgLogin, "Login realizado com sucesso! ✅", "#2e7d32");
-    formLogin.reset();
-  });
-
+atividades.forEach(a => {
+  a.style.opacity = 0;
+  a.style.transform = 'translateY(30px)';
+  a.style.transition = 'all 1s';
+  observer.observe(a);
 });
