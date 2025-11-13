@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +7,12 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background-color: #000;
+  background: linear-gradient(to bottom, #000000, #13294b);
   color: white;
   text-align: center;
 }
 
+/* ===== HEADER ===== */
 .topo {
   display: flex;
   justify-content: flex-end;
@@ -19,7 +21,7 @@ body {
 }
 
 .icone {
-  width: 35px;
+  width: 30px;
   margin-left: 10px;
   cursor: pointer;
   transition: transform 0.3s;
@@ -47,6 +49,7 @@ body {
   font-size: 2rem;
 }
 
+/* ===== MAIN ===== */
 .sobre {
   background: url('https://upload.wikimedia.org/wikipedia/commons/e/e6/Mount_Fuji_from_Lake_Kawaguchi_with_red_maple_leaves.jpg') center/cover no-repeat;
   display: flex;
@@ -65,16 +68,10 @@ body {
 .atividade img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.2);
 }
 
 .atividade:hover {
   transform: scale(1.1);
-}
-
-.atividade p {
-  margin-top: 8px;
-  font-size: 0.9rem;
 }
 
 .kanji img {
@@ -83,6 +80,7 @@ body {
   display: block;
 }
 
+/* ===== FOOTER ===== */
 footer {
   background: #000000aa;
   padding: 20px;
