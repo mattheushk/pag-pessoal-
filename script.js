@@ -1,4 +1,4 @@
-// ===== 1. Efeito de zoom nos ícones do topo =====
+// Funções JS interativas
 document.querySelectorAll('.icone').forEach(icon => {
   icon.addEventListener('mouseenter', () => {
     icon.style.transform = 'rotate(10deg) scale(1.3)';
@@ -8,32 +8,20 @@ document.querySelectorAll('.icone').forEach(icon => {
   });
 });
 
-// ===== 2. Saudação dinâmica =====
 window.addEventListener('load', () => {
   const hora = new Date().getHours();
-  let saudacao = '';
-
-  if (hora < 12) saudacao = 'Bom dia!';
-  else if (hora < 18) saudacao = 'Boa tarde!';
-  else saudacao = 'Boa noite!';
-
+  let saudacao = hora < 12 ? 'Bom dia!' : hora < 18 ? 'Boa tarde!' : 'Boa noite!';
   alert(`${saudacao} Seja bem-vindo(a) à minha página!`);
 });
 
-// ===== 3. Clique nas imagens com efeito =====
 const atividades = document.querySelectorAll('.atividade');
 atividades.forEach(a => {
   a.addEventListener('click', () => {
     a.classList.toggle('ativo');
-    if (a.classList.contains('ativo')) {
-      a.style.filter = 'brightness(1.4)';
-    } else {
-      a.style.filter = 'brightness(1)';
-    }
+    a.style.filter = a.classList.contains('ativo') ? 'brightness(1.4)' : 'brightness(1)';
   });
 });
 
-// ===== 4. Botão de rolar ao topo =====
 const botaoTopo = document.createElement('button');
 botaoTopo.textContent = "⬆️ Topo";
 botaoTopo.classList.add('btn-topo');
@@ -43,7 +31,6 @@ botaoTopo.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Estilo do botão
 const estilo = document.createElement('style');
 estilo.textContent = `
   .btn-topo {
@@ -62,13 +49,10 @@ estilo.textContent = `
 `;
 document.head.appendChild(estilo);
 
-// Mostrar botão quando rolar
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) botaoTopo.style.display = 'block';
-  else botaoTopo.style.display = 'none';
+  botaoTopo.style.display = window.scrollY > 200 ? 'block' : 'none';
 });
 
-// ===== 5. Efeito de fade-in quando aparece na tela =====
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
