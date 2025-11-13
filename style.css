@@ -86,3 +86,14 @@ footer {
   padding: 20px;
   font-size: 0.9rem;
 }
+.whats-link {
+  color: #25d366;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.whats-link:hover {
+  color: #1ebe5d;
+  text-decoration: underline;
+}
