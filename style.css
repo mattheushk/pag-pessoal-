@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,42 +6,47 @@
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(to bottom, #000000, #13294b);
+  font-family: Arial, sans-serif;
+  background-color: #000;
   color: white;
   text-align: center;
+  transition: 0.3s;
 }
 
-/* ===== HEADER ===== */
-.topo {
+/* BARRAS SUPERIORES E INFERIORES */
+.barra-topo {
+  width: 100%;
+  height: 120px;
+  background: #c44a2d;
+}
+
+/* ÍCONES */
+.icones {
+  margin-top: -110px;
+  padding: 15px;
   display: flex;
   justify-content: flex-end;
-  padding: 10px;
-  background-color: #c44a2d;
 }
 
 .icone {
-  width: 30px;
+  width: 35px;
   margin-left: 10px;
-  cursor: pointer;
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .icone:hover {
   transform: scale(1.2);
 }
 
+/* FOTO PERFIL */
 .foto-perfil {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  margin-top: -90px;
 }
 
 .foto-perfil img {
-  width: 200px;
+  width: 230px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
 
 .foto-perfil h1 {
@@ -49,51 +54,86 @@ body {
   font-size: 2rem;
 }
 
-/* ===== MAIN ===== */
+/* ATIVIDADES */
 .sobre {
   background: url('https://upload.wikimedia.org/wikipedia/commons/e/e6/Mount_Fuji_from_Lake_Kawaguchi_with_red_maple_leaves.jpg') center/cover no-repeat;
+  padding: 40px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 40px 20px;
-  position: relative;
 }
 
 .atividade {
-  width: 180px;
-  margin: 15px;
-  transition: transform 0.4s;
+  width: 170px;
+  margin: 20px;
+  transition: 0.3s;
 }
 
 .atividade img {
-  width: 100%;
+  width: 170px;
+  height: 120px;
+  object-fit: cover;
   border-radius: 10px;
+  transition: 0.3s;
 }
 
-.atividade:hover {
-  transform: scale(1.1);
+.atividade:hover img {
+  box-shadow: 0 0 20px white;
+  transform: scale(1.05);
 }
 
+/* KANJI */
 .kanji img {
-  width: 100px;
-  margin: 20px auto;
+  width: 110px;
+  margin: 30px auto;
   display: block;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
-  background: #000000aa;
+  background: #000000d5;
   padding: 20px;
-  font-size: 0.9rem;
 }
+
 .whats-link {
   color: #25d366;
-  text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  text-decoration: none;
 }
 
 .whats-link:hover {
-  color: #1ebe5d;
   text-decoration: underline;
+}
+
+/* BOTÃO TEMA */
+#tema-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #c44a2d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+#tema-btn:hover {
+  transform: scale(1.1);
+}
+
+/* TEMA CLARO */
+.light {
+  background-color: white;
+  color: black;
+}
+
+.light footer {
+  background: #dddddd;
+}
+
+.light #tema-btn {
+  background: #333;
 }
