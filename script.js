@@ -76,7 +76,7 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.style.transform = 'translateY(0)';
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.3 })
 
 atividades.forEach(a => {
   a.style.opacity = 0;
