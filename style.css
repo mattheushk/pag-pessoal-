@@ -1,8 +1,11 @@
+/* FUNDO COM A IMAGEM image copy 8.png */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f4f4f4;
+  background: url("image copy 8.png") no-repeat center center fixed;
+  background-size: cover;
   text-align: center;
+  color: #fff;
 }
 
 /* TOPO */
@@ -18,80 +21,57 @@ body {
   height: 40px;
 }
 
-.foto-perfil img {
-  width: 150px;
-  border-radius: 50%;
-  margin-top: 20px;
-}
-
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-/* ===============================
-   IMAGEM CENTRAL (A QUE VOCÊ ENVIOU)
-================================ */
-.centro {
+/* LINHA SUPERIOR E INFERIOR */
+.linha-superior,
+.linha-inferior {
   display: flex;
   justify-content: center;
-  margin: 40px 0 20px 0;
+  gap: 40px;
+  margin: 40px 0;
 }
 
-.img-central {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #0003;
-}
-
-/* ===============================
-   IMAGENS AO REDOR
-   ESTILO CÍRCULO
-================================ */
-.circular-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  padding: 20px;
-}
-
+/* IMAGENS */
 .atividade {
   text-align: center;
-  width: 150px;
 }
 
 .atividade img {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 0 0 10px #0003;
+  box-shadow: 0 0 15px #0008;
+  transition: 0.2s;
+}
+
+.atividade img:hover {
+  transform: scale(1.08);
 }
 
 .atividade p {
-  margin-top: 8px;
-  font-size: 15px;
-  font-weight: 600;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
 }
 
-/* KANJI */
-.kanji img {
-  width: 250px;
+/* KANJI CENTRAL */
+.kanji-central img {
+  width: 260px;
   margin: 40px auto;
+  display: block;
+  filter: drop-shadow(0 0 20px #000);
 }
 
 /* RODAPÉ */
 footer {
+  margin-top: 60px;
   padding: 20px;
-  background: #333;
-  color: #fff;
+  background: rgba(0,0,0,0.6);
 }
 
 .whats-link {
   color: #00ff88;
-  text-decoration: none;
   font-size: 18px;
+  text-decoration: none;
 }
