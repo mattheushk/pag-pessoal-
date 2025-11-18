@@ -44,14 +44,31 @@
 }
 
 /* ===========================
-   FUNDO MONTANHA + CONTEÚDO
+   FUNDO MONTANHA (no meio)
 =========================== */
 
-.conteudo {
-  background: url("montanha.png") no-repeat center;
+.fundo-montanha {
+  width: 100%;
+  height: 550px; /* ajuste como quiser */
+  background-image: url("image copy 8.png");
   background-size: cover;
-  padding: 40px 0;
-  color: white;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  position: relative;
+  z-index: 0;
+  margin-bottom: -250px;  /* puxa as imagens pra cima */
+}
+
+/* ===========================
+   CONTEÚDO SOBRE O FUNDO
+=========================== */
+
+.linha-superior,
+.linha-inferior,
+.kanji {
+  position: relative;
+  z-index: 2; /* garante que fiquem na frente */
 }
 
 /* ===========================
@@ -62,11 +79,11 @@
   display: flex;
   justify-content: center;
   gap: 60px;
-  margin: 40px 0;
+  margin: 60px 0;
 }
 
 /* ===========================
-   IMAGENS
+   IMAGENS DAS ATIVIDADES
 =========================== */
 
 .atividade {
@@ -101,6 +118,7 @@
   width: 140px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 40px;
   filter: drop-shadow(0 0 8px #000);
 }
 
@@ -113,7 +131,7 @@ footer {
   color: white;
   text-align: center;
   padding: 25px;
-  margin-top: 40px;
+  margin-top: 60px;
   font-size: 1rem;
 }
 
@@ -121,46 +139,4 @@ footer {
   color: #00ff88;
   font-size: 1.2rem;
   text-decoration: none;
-}
-.fundo-montanha {
-  background: url("image copy 8.png") no-repeat center center;
-  background-size: cover;
-  width: 100%;
-  height: 600px;          /* ajuste para ficar igual ao modelo */
-  position: relative;
-  z-index: 0;
-}
-
-/* Faz o kanji e as imagens ficarem NA FRENTE do fundo */
-.kanji,
-.linha-superior,
-.linha-inferior {
-  position: relative;
-  z-index: 2;
-}
-/* ===== FUNDO DA MONTANHA ===== */
-.fundo-montanha {
-  width: 100%;
-  height: 500px; /* ajuste até ficar idêntico ao modelo */
-  background-image: url("image copy 8.png");
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  
-  position: relative;
-  z-index: 0;
-}
-
-/* Coloca o resto das imagens NA FRENTE */
-.linha-superior,
-.linha-inferior,
-.kanji {
-  position: relative;
-  z-index: 10;
-  margin-top: -200px;   /* sobe as imagens para cima do fundo */
-}
-
-/* Ajuste fino para alinhar certinho */
-.kanji {
-  margin-top: -150px;
 }
