@@ -122,3 +122,19 @@ footer {
   font-size: 1.2rem;
   text-decoration: none;
 }
+.fundo-montanha {
+  background: url("image copy 8.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 600px;          /* ajuste para ficar igual ao modelo */
+  position: relative;
+  z-index: 0;
+}
+
+/* Faz o kanji e as imagens ficarem NA FRENTE do fundo */
+.kanji,
+.linha-superior,
+.linha-inferior {
+  position: relative;
+  z-index: 2;
+}
