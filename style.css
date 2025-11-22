@@ -44,20 +44,23 @@
 }
 
 /* ===========================
-   FUNDO MONTANHA (no meio)
+   FUNDO MONTANHA (SEM CORTAR)
 =========================== */
 
 .fundo-montanha {
   width: 100%;
-  height: 550px; /* ajuste como quiser */
+  height: 900px;   /* altura maior para mostrar a imagem inteira */
+  
   background-image: url("image copy 8.png");
-  background-size: cover;
-  background-position: center top;
+  background-size: contain;    /* MOSTRA A IMAGEM INTEIRA */
   background-repeat: no-repeat;
-
+  background-position: center top;
+  
+  background-color: black;     /* preenche áreas vazias */
+  
   position: relative;
   z-index: 0;
-  margin-bottom: -250px;  /* puxa as imagens pra cima */
+  margin-bottom: 0;            /* remove puxada que deformava */
 }
 
 /* ===========================
